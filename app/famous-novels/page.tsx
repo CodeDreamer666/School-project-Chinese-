@@ -2,85 +2,85 @@
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 
-const musicQuestions = [
+const novelQuestions = [
     {
         id: 1,
-        question: "以下哪一个歌曲是新谣的一种？",
-        options: ["《江南》", "《细水长流》", "《修炼爱情》"],
+        question: "《三国演义》里面分别是哪三国？",
+        options: ["中国，美国，泰国", "魏国，蜀国，吴国", "前燕，西凉，夏国"],
         answer: "B",
-        explanation: "《细水长流》是新谣歌曲，由梁文福创作，是新加坡华语音乐的重要作品之一。"
+        explanation: "《三国演义》讲述的是魏国、蜀国、吴国三国争霸的故事。"
     },
     {
         id: 2,
-        question: "《跳楼机》接歌词：Baby 我們的感情好像跳樓機讓我突然地升空又急速落地你給我一場瘋狂______",
-        options: ["劫後餘生好難呼吸", "街后余生好难呼吸", "劫後鱼身好難呼吸"],
-        answer: "A",
-        explanation: "正确歌词是：劫後餘生好難呼吸。"
+        question: "《三国演义》里面哪三个人结拜成兄弟？",
+        options: ["刘备，赵云，张飞", "吕布，关羽，赵云", "刘备，张飞，关羽"],
+        answer: "C",
+        explanation: "刘备、关羽、张飞在桃园结义，结拜成为兄弟。"
     },
     {
         id: 3,
-        question: "《小幸运》这首歌是哪一部电影的主题曲？",
-        options: ["《月老》", "《不能说的秘密》", "《我的少女时代》"],
+        question: "《水浒传》里面讲述着多少个好汉的故事？",
+        options: ["1108", "118", "108"],
         answer: "C",
-        explanation: "《小幸运》是电影《我的少女时代》的主题曲。"
+        explanation: "《水浒传》讲述梁山108位好汉的故事。"
     },
     {
         id: 4,
-        question: "“你的斑駁與眾不同你的沉默震耳欲聾”这个歌词出自哪首歌？",
-        options: ["《倔强》", "《孤勇者》", "《怒放的生命》"],
-        answer: "B",
-        explanation: "这句歌词来自陈奕迅演唱的《孤勇者》。"
+        question: "《红楼梦》的作者是：",
+        options: ["罗贯中", "吴承恩", "曹雪芹", "施耐庵"],
+        answer: "C",
+        explanation: "《红楼梦》的作者是清代作家曹雪芹。"
     },
     {
         id: 5,
-        question: "《少年》这首歌的歌手是谁？",
-        options: ["邓紫棋", "周深", "梦然"],
+        question: "《红楼梦》主要讲的是：",
+        options: ["打仗故事", "神话故事", "一个大家族的生活和变化", "科学发明"],
         answer: "C",
-        explanation: "《少年》是歌手梦然演唱的歌曲。"
+        explanation: "《红楼梦》主要描写贾、史、王、薛四大家族的兴衰与生活。"
     },
     {
         id: 6,
-        question: "《热爱105°C的你》其实是？",
-        options: ["主题曲", "广告曲", "阿肆2021的新专辑《爱你》里面的一首歌"],
-        answer: "B",
-        explanation: "这首歌其实是广告歌曲，因为旋律洗脑而爆红。"
+        question: "《西游记》中，用来打发、安抚孙悟空的职位是？",
+        options: ["弼马温", "蟠桃园主管", "齐天大圣"],
+        answer: "A",
+        explanation: "玉皇大帝最初给孙悟空的职位是弼马温。"
     },
     {
         id: 7,
-        question: "下面哪首歌不是周杰伦作词？",
-        options: ["《稻香》", "《青花瓷》", "《星晴》"],
-        answer: "B",
-        explanation: "《青花瓷》的歌词是方文山写的，不是周杰伦。"
+        question: "《西游记》里面的金箍棒本来的用途是什么？",
+        options: ["稳定东海的大柱子", "稳定西海的大柱子", "一个很重，收缩自如的兵器"],
+        answer: "A",
+        explanation: "金箍棒原本是东海龙宫用来镇海的定海神针。"
     },
     {
         id: 8,
-        question: "以下哪首歌在 YouTube 上有最多的播放量？",
-        options: ["BEYOND 的《海阔天空》", "曲婉婷的《在我的歌声里》", "邓紫棋/BEYOND 的《喜欢你》"],
-        answer: "B",
-        explanation: "曲婉婷的《在我的歌声里》在 YouTube 上有非常高的播放量。"
+        question: "以下哪个选项中的梁山好汉，其绰号与人物自身的“外形特征”有关？",
+        options: ["及时雨宋江", "鼓上蚤时迁", "九纹龙史进", "智多星吴用"],
+        answer: "C",
+        explanation: "史进身上有九条龙的纹身，因此绰号叫“九纹龙”。"
     },
     {
         id: 9,
-        question: "哪一段歌词出现在《听妈妈的话》的 rapping 里面？",
-        options: ["因为母亲节到时我还会留着", "因为母亲节到时我要告诉她我还留着", "因为母亲节到了时我要让她看见我还留着"],
-        answer: "B",
-        explanation: "正确歌词是：因为母亲节到时我要告诉她我还留着。"
+        question: "下列哪一项最能概括《水浒传》的主题思想？",
+        options: ["描写帝王将相的宫廷斗争", "讲述才子佳人的浪漫爱情故事", "歌颂官逼民反的英雄抗争", "记录唐代高僧的西行取经之路"],
+        answer: "C",
+        explanation: "《水浒传》歌颂官逼民反的英雄抗争精神。"
     },
     {
         id: 10,
-        question: "周杰伦哪一张专辑里面全部歌曲播放量最多？",
-        options: ["有《安静》的《范特西》", "有《夜曲》的《11月的肖邦》", "有《不该》的《周杰伦的床边故事》"],
-        answer: "C",
-        explanation: "《周杰伦的床边故事》整张专辑在多个平台播放量非常高。"
+        question: "谁是《三国演义》里面最大的赢家？",
+        options: ["刘备", "孙权", "曹操", "司马懿"],
+        answer: "D",
+        explanation: "三国最后被司马懿的后代统一，建立晋朝，因此被认为是最大的赢家。"
     }
 ]
 
-export default function MusicQuiz() {
+export default function NovelQuiz() {
 
     const router = useRouter()
 
     const [answers, setAnswers] = useState(
-        musicQuestions.map(q => ({ id: q.id, answer: "" }))
+        novelQuestions.map(q => ({ id: q.id, answer: "" }))
     )
 
     const [score, setScore] = useState(0)
@@ -95,7 +95,7 @@ export default function MusicQuiz() {
 
         let total = 0
 
-        musicQuestions.forEach(q => {
+        novelQuestions.forEach(q => {
             const user = answers.find(a => a.id === q.id)?.answer
             if (user === q.answer) total++
         })
@@ -105,7 +105,7 @@ export default function MusicQuiz() {
     }
 
     function resetQuiz() {
-        setAnswers(musicQuestions.map(q => ({ id: q.id, answer: "" })))
+        setAnswers(novelQuestions.map(q => ({ id: q.id, answer: "" })))
         setScore(0)
         setSubmitted(false)
     }
@@ -120,16 +120,16 @@ export default function MusicQuiz() {
             >
 
                 <h1 className="text-2xl font-bold text-center">
-                    华语音乐知识测验
+                    四大名著知识测验
                 </h1>
 
                 {submitted && (
                     <div className="bg-blue-50 p-4 rounded-md text-center font-semibold text-lg text-blue-700">
-                        你的分数: {score} / {musicQuestions.length}
+                        你的分数: {score} / {novelQuestions.length}
                     </div>
                 )}
 
-                {musicQuestions.map(({ id, question, options, answer, explanation }) => {
+                {novelQuestions.map(({ id, question, options, answer, explanation }) => {
 
                     const userAnswer = answers.find(a => a.id === id)?.answer
                     const correct = submitted ? userAnswer === answer : null

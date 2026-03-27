@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation"
 const traditional_culture = [
     { id: 1, question: "春节是农历新年。", answer: true, explanation: "春节就是中国的农历新年，是中国最重要的传统节日。" },
     { id: 2, question: "中秋节一定在9月。", answer: false, explanation: "中秋节在农历八月十五，在公历有时是9月，有时是10月。" },
-    { id: 3, question: "中国的国旗是红色的。", answer: true, explanation: "中国国旗叫五星红旗，背景是红色。" },
     { id: 4, question: "龙是中国真实存在的动物。", answer: false, explanation: "龙是中国神话中的动物，不是真实存在的。" },
     { id: 5, question: "中国有56个民族。", answer: true, explanation: "中国共有56个民族，包括汉族和55个少数民族。" },
     { id: 6, question: "“十二生肖”一共有10种动物。", answer: false, explanation: "十二生肖一共有12种动物。" },

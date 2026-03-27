@@ -28,6 +28,7 @@ export default function ChooseCategory() {
           <option value="music">音乐</option>
           <option value="food">食物</option>
           <option value="traditional_culture">中国传统文化</option>
+          <option value="famous-novels">四大名著</option>
         </select>
 
         <button
